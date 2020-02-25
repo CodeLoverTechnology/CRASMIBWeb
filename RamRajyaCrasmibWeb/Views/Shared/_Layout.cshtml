@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Centre for Research in Ayurveda and “Social Medicine for International Brotherhood”</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <a href="http://crasmib.org/" target="_blank"><img src="~/Images/CRASMIB_RamRajyaLogo.jpeg" class="img-fluid rounded" /></a>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 p-2 text-center">
+            <h1 class="h1 display-4 font-weight-bold">अंतर्राष्ट्रीय संयुक्त राम राज्य संसद</h1>
+            <h2>International United Ram Rajya Parliament</h2>
+            <h4>(The Knigdom of Absolute Truth)</h4>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <img src="~/Images/RamRajya.jpeg" class="img-fluid img-thumbnail shadow" />
+        </div>
+    </div>
+
+    <div class="row bg-dark">
+        <!--Navbar-->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark primary-color bg-dark">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="/">राम राज्य</a>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        @*<li class="nav-item active">
+                            <a class="nav-link" href="/">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Ram_Rajya">Ram Rajya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MembersMaster/Create">Membership</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                <a class="nav-link" href="/MembersMaster/Index">Member List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/M_MasterInfo/Index">Masters</a>
+            </li>*@
+
+                        <!-- Dropdown -->
+                        @*<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>*@
+
+                    </ul>
+                    <!-- Links -->
+
+                    <form class="form-inline">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                        <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/13ED16BCD3B9F04BA591C634A8A44290' target="_blank"><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a></div>
+                    </div>
+                <!-- Collapsible content -->
+
+            </nav>
+        </div>
+        <!--/.Navbar-->
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+    </div>
+    <div class="clearfix"></div>
+    <br />
+    <div class="row p-4 bg-light">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="~/Images/SwamiJitendraSinghRaghuvanshi.jpeg" class="img-fluid  img-thumbnail shadow" style="height:250px;" />
+                        </div>
+                        <div class="col-6">
+                            <h3 class="h3">डॉ. स्वामी राघवानन्द गिरि</h3>
+                            <h5></h5>
+                            <small>
+                                संस्थापक अध्यक्ष
+                                <br />
+                                Contact No : 08920989066,
+                                7011266490
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="~/Images/AnuragDubey.jpeg" class="img-fluid img-thumbnail shadow" style="height:250px;" />
+                        </div>
+                        <div class="col-6">
+                            <h3 class="h3">
+                                श्री अनुराग शंकर दुबे
+                            </h3>
+                            <h5>एडवोकेट सुप्रीम कोर्ट आफ इंडिया </h5>
+                            <h5>(पुत्र स्व न्यायमूर्ति - पं. जयशन्कर दुबे )</h5>
+                            <small>
+                                अन्तर्राष्ट्रीय भक्त मंडल निदेशक
+                                <br />
+                                Contact No : 08920989066,
+                                7011266490
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if ('@TempData["SuccessMessage"]' !== '' && '@TempData["SuccessMessage"]' !== undefined) {
+            alert('@TempData["SuccessMessage"]');
+        }
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RAMRAJYADBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="M_MasterInfo">
+          <Key>
+            <PropertyRef Name="MasterID" />
+          </Key>
+          <Property Name="MasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterText" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MasterTable" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_MembersMaster">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParantName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Qualification" Type="int" Nullable="false" />
+          <Property Name="Occupation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="P_Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Permanent_Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Interest_Achievement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PurposeOfJoining" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OtherNGO_Member" Type="bit" Nullable="false" />
+          <Property Name="OtherNGOMembersDetails" Type="nvarchar(max)" />
+          <Property Name="MembershipCategory" Type="int" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar(max)" />
+          <Property Name="Website" Type="nvarchar(max)" />
+          <Property Name="Organization" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="OrganizationPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrganizationFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrganizationEmail" Type="nvarchar(max)" />
+          <Property Name="OrganizationWebsite" Type="nvarchar(max)" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="ValidityFrom" Type="datetime" />
+          <Property Name="ValidtyTo" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_M_MembersMaster_M_MasterInfo">
+          <End Role="M_MasterInfo" Type="Self.M_MasterInfo" Multiplicity="1" />
+          <End Role="M_MembersMaster" Type="Self.M_MembersMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterInfo">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="M_MembersMaster">
+              <PropertyRef Name="Qualification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_MembersMaster_M_MasterInfo1">
+          <End Role="M_MasterInfo" Type="Self.M_MasterInfo" Multiplicity="1" />
+          <End Role="M_MembersMaster" Type="Self.M_MembersMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterInfo">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="M_MembersMaster">
+              <PropertyRef Name="MembershipCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RAMRAJYADBModelStoreContainer">
+          <EntitySet Name="M_MasterInfo" EntityType="Self.M_MasterInfo" Schema="RamRajyaAdmin" store:Type="Tables" />
+          <EntitySet Name="M_MembersMaster" EntityType="Self.M_MembersMaster" Schema="RamRajyaAdmin" store:Type="Tables" />
+          <AssociationSet Name="FK_M_MembersMaster_M_MasterInfo" Association="Self.FK_M_MembersMaster_M_MasterInfo">
+            <End Role="M_MasterInfo" EntitySet="M_MasterInfo" />
+            <End Role="M_MembersMaster" EntitySet="M_MembersMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_MembersMaster_M_MasterInfo1" Association="Self.FK_M_MembersMaster_M_MasterInfo1">
+            <End Role="M_MasterInfo" EntitySet="M_MasterInfo" />
+            <End Role="M_MembersMaster" EntitySet="M_MembersMaster" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RAMRAJYADBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="M_MasterInfo">
+          <Key>
+            <PropertyRef Name="MasterID" />
+          </Key>
+          <Property Name="MasterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MasterTable" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="M_MembersMaster" Relationship="Self.FK_M_MembersMaster_M_MasterInfo" FromRole="M_MasterInfo" ToRole="M_MembersMaster" />
+          <NavigationProperty Name="M_MembersMaster1" Relationship="Self.FK_M_MembersMaster_M_MasterInfo1" FromRole="M_MasterInfo" ToRole="M_MembersMaster" />
+        </EntityType>
+        <EntityType Name="M_MembersMaster">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ParantName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Qualification" Type="Int32" Nullable="false" />
+          <Property Name="Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="P_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Permanent_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Interest_Achievement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurposeOfJoining" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OtherNGO_Member" Type="Boolean" Nullable="false" />
+          <Property Name="OtherNGOMembersDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MembershipCategory" Type="Int32" Nullable="false" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Organization" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationWebsite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="ValidityFrom" Type="DateTime" Precision="3" />
+          <Property Name="ValidtyTo" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="M_MasterInfo" Relationship="Self.FK_M_MembersMaster_M_MasterInfo" FromRole="M_MembersMaster" ToRole="M_MasterInfo" />
+          <NavigationProperty Name="M_MasterInfo1" Relationship="Self.FK_M_MembersMaster_M_MasterInfo1" FromRole="M_MembersMaster" ToRole="M_MasterInfo" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_M_MembersMaster_M_MasterInfo">
+          <End Role="M_MasterInfo" Type="Self.M_MasterInfo" Multiplicity="1" />
+          <End Role="M_MembersMaster" Type="Self.M_MembersMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterInfo">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="M_MembersMaster">
+              <PropertyRef Name="Qualification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_MembersMaster_M_MasterInfo1">
+          <End Role="M_MasterInfo" Type="Self.M_MasterInfo" Multiplicity="1" />
+          <End Role="M_MembersMaster" Type="Self.M_MembersMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterInfo">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="M_MembersMaster">
+              <PropertyRef Name="MembershipCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CRASMIB_RAMRAJYADBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="M_MasterInfo" EntityType="Self.M_MasterInfo" />
+          <EntitySet Name="M_MembersMaster" EntityType="Self.M_MembersMaster" />
+          <AssociationSet Name="FK_M_MembersMaster_M_MasterInfo" Association="Self.FK_M_MembersMaster_M_MasterInfo">
+            <End Role="M_MasterInfo" EntitySet="M_MasterInfo" />
+            <End Role="M_MembersMaster" EntitySet="M_MembersMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_MembersMaster_M_MasterInfo1" Association="Self.FK_M_MembersMaster_M_MasterInfo1">
+            <End Role="M_MasterInfo" EntitySet="M_MasterInfo" />
+            <End Role="M_MembersMaster" EntitySet="M_MembersMaster" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RAMRAJYADBModelStoreContainer" CdmEntityContainer="CRASMIB_RAMRAJYADBEntities">
+          <EntitySetMapping Name="M_MasterInfo">
+            <EntityTypeMapping TypeName="RAMRAJYADBModel.M_MasterInfo">
+              <MappingFragment StoreEntitySet="M_MasterInfo">
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="MasterText" ColumnName="MasterText" />
+                <ScalarProperty Name="MasterTable" ColumnName="MasterTable" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_MembersMaster">
+            <EntityTypeMapping TypeName="RAMRAJYADBModel.M_MembersMaster">
+              <MappingFragment StoreEntitySet="M_MembersMaster">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParantName" ColumnName="ParantName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="P_Address" ColumnName="P_Address" />
+                <ScalarProperty Name="Permanent_Address" ColumnName="Permanent_Address" />
+                <ScalarProperty Name="Interest_Achievement" ColumnName="Interest_Achievement" />
+                <ScalarProperty Name="PurposeOfJoining" ColumnName="PurposeOfJoining" />
+                <ScalarProperty Name="OtherNGO_Member" ColumnName="OtherNGO_Member" />
+                <ScalarProperty Name="OtherNGOMembersDetails" ColumnName="OtherNGOMembersDetails" />
+                <ScalarProperty Name="MembershipCategory" ColumnName="MembershipCategory" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="OrganizationPhone" ColumnName="OrganizationPhone" />
+                <ScalarProperty Name="OrganizationFax" ColumnName="OrganizationFax" />
+                <ScalarProperty Name="OrganizationEmail" ColumnName="OrganizationEmail" />
+                <ScalarProperty Name="OrganizationWebsite" ColumnName="OrganizationWebsite" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="ValidityFrom" ColumnName="ValidityFrom" />
+                <ScalarProperty Name="ValidtyTo" ColumnName="ValidtyTo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
