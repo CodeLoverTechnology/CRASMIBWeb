@@ -56,7 +56,7 @@ namespace RamRajyaCrasmibWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                m_MembersMaster.MemberID = CommonFunction.GenerateMemberCode();
+                m_MembersMaster.MemberID = CommonFunctionRR.GenerateMemberCode();
                 m_MembersMaster.CreatedBy = Resources.RamRajyaResources.DefaultLoginUser;
                 m_MembersMaster.CreatedDate = DateTime.Now;
                 m_MembersMaster.ModifiedBy = Resources.RamRajyaResources.DefaultLoginUser;

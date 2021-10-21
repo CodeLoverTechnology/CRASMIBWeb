@@ -42,11 +42,11 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         @*<li class="nav-item active">
-                            <a class="nav-link" href="/">
-                                Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>*@
+                                <a class="nav-link" href="/">
+                                    Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link" href="/Home/Ram_Rajya">Ram Rajya</a>
                         </li>
@@ -55,22 +55,22 @@
                         </li>
 
                         @*<li class="nav-item">
-                <a class="nav-link" href="/MembersMaster/Index">Member List</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/M_MasterInfo/Index">Masters</a>
-            </li>*@
+                                <a class="nav-link" href="/MembersMaster/Index">Member List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/M_MasterInfo/Index">Masters</a>
+                            </li>*@
 
                         <!-- Dropdown -->
                         @*<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>*@
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>*@
 
                     </ul>
                     <!-- Links -->
@@ -80,8 +80,8 @@
                             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                         </div>
                     </form>
-                        <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/13ED16BCD3B9F04BA591C634A8A44290' target="_blank"><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a></div>
-                    </div>
+                    <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/13ED16BCD3B9F04BA591C634A8A44290' target="_blank"><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a></div>
+                </div>
                 <!-- Collapsible content -->
 
             </nav>
@@ -146,7 +146,8 @@
         }
     </script>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

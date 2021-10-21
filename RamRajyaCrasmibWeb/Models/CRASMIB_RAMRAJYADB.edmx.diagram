@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="160c6b5acc354fba9355063f82ef5652" Name="Diagram1" ZoomLevel="75">
+      <Diagram DiagramId="160c6b5acc354fba9355063f82ef5652" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="RAMRAJYADBModel.M_MasterInfo" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RAMRAJYADBModel.M_MembersMaster" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="RAMRAJYADBModel.FK_M_MembersMaster_M_MasterInfo" ManuallyRouted="false" />

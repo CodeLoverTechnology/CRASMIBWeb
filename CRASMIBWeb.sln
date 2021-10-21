@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRASMIBWeb", "CRASMIBWeb\CRASMIBWeb.csproj", "{6AA95180-8A64-40D4-B794-29D71331608A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamRajyaCrasmibWeb", "RamRajyaCrasmibWeb\RamRajyaCrasmibWeb.csproj", "{8E3FC27E-8951-403F-A2A1-848B3D84324F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6AA95180-8A64-40D4-B794-29D71331608A} = {6AA95180-8A64-40D4-B794-29D71331608A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
